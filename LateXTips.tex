@@ -1,0 +1,81 @@
+\documentclass[a4paper]{scrreprt}
+
+%Math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{dsfont}
+
+
+%PageStyle
+\usepackage[ngerman]{babel}
+\usepackage{fontenc}
+\usepackage[latin1]{inputenc} %for latin1 encoding, enables umlauts
+\usepackage{a4wide}
+\usepackage{fancyhdr, graphicx}
+\usepackage{wasysym}
+\usepackage{fullpage}
+\usepackage{textcomp}
+\usepackage{fancyhdr} %for header/footer
+
+%My Commands
+\newcommand{\BN}{\mathbb{B}} %BOOL
+\newcommand{\RN}{\mathds{R}} %Real Numbers
+\newcommand{\NN}{\mathds{N}} %Natural Numbers
+\newcommand{\QN}{\mathds{Q}} %Rational Numbers
+\newcommand{\ZN}{\mathds{Z}} %Whole Numbers
+\newcommand{\CN}{\mathds{C}} %Complex Numbers
+\newcommand{\Teilt}{\mid} % Teilt
+\newcommand{\Teiltn}{\nmid} % Teilt nicht
+\newcommand{\Potp}{\mathcal{P}} %Potenzmenge
+\newcommand{\Pota}{\mathcal{A}}
+\newcommand{\Potr}{\mathcal{R}}
+\newcommand{\Potn}{\mathcal{N}}
+\newcommand{\Bold}[1]{\textbf{#1}} %Boldface
+\newcommand{\Kursiv}[1]{\textit{#1}} %Italic
+\newcommand{\T}[1]{\text{#1}} %Textmode for use inside mathmode | For example to write a fraction of 1 over some text
+\newcommand{\Nicht}[1]{\T{\sout{$ #1 $}}} %Crosses text out
+\newcommand{\lra}{\leftrightarrow} %Arrows
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\lral}{\longleftrightarrow}
+\newcommand{\ral}{\longrightarrow}
+\newcommand{\lal}{\longleftarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\Lral}{\Longleftrightarrow}
+\newcommand{\Ral}{\Longrightarrow}
+\newcommand{\Lal}{\Longleftarrow}
+\newcommand{\Vektor}[1]{\vec{#1}}
+\newcommand{\Brace}[1]{\left( #1 \right)} %()
+\newcommand{\Bracel}[1]{\left\lbrace #1 \right.} %(
+\newcommand{\Bracer}[1]{\right. #1 \right\rbrace} %)
+\newcommand{\Brack}[1]{\left\lbrace #1 \right\rbrace} %{}
+\newcommand{\Brackl}[1]{\left\lbrace #1 \right.} %{
+\newcommand{\Brackr}[1]{\right. #1 \right\rbrace} %}
+\newcommand{\Result}[1]{\underline{\underline{#1}}} %Doubly underscored
+\newcommand{\Abs}[1]{\left| #1 \right|} %Absolute Value
+\newcommand{\Norm}[1]{\Abs{\Abs{ #1 }}} %Norm ||x||
+\newcommand{\Matrix}[1]{\left(\begin{matrix}{#1}\end{matrix}\right)} %Creates a matrix | a & b will be on the same line | // creates a new line
+\newcommand{\CMatrix}[1]{\left\{\begin{matrix}{#1}\end{matrix}\right\}} %Same, with curly braces
+\newcommand{\Brackal}[2]{\left\lbrace\begin{array}{#1} #2 \end{array}\right.} %Creates a single large {
+\newcommand{\Brackar}[2]{\left.\begin{array}{#1} #2 \end{array}\right\rbrace} %Creates a single large }
+\newcommand{\Sumone}[2]{\sum_{#1=1}^{#2}} %Sum from arg1 = 1 to arg2
+\newcommand{\Sumz}[2]{\sum_{#1=0}^{#2}} %Sum from arg1 = 0 to arg2
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}} %Sum from arg1 to arg2
+\newcommand{\Oneover}[1]{\frac{1}{#1}} %One divided by arg1
+\newcommand{\Tablewt}[3]{\begin{table*}[h]\caption{#1} \begin{tabular}{#2}{#3}\end{tabular}\end{table*}} %Table with a title
+\newcommand{\Oben}[2]{\overset{#1}{#2}} %Highlights the enumerator
+\newcommand{\Unten}[2]{\underset{#1}{#2}} %Highlights the divisor
+\newcommand{\Bildcap}[2]{\begin{figure}[htb]\centering\includegraphics[width=0.2\textwidth]{#1} \caption{#2}\end{figure}} %Image with Caption
+\newcommand{\Bildjpeg}[1]{\includegraphics[width=0.2\textwidth]{#1.jpeg}} %JPEG Image
+\newcommand{\Bildjpg}[1]{\includegraphics[width=0.2\textwidth]{#1.jpg}} %JPG Image
+
+
+
+\begin{document}
+
+\end{document}
