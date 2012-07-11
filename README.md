@@ -1,4 +1,4 @@
 LaTeX-Tipps-Sammlung
 ====================
 
-A collection of tipps for using LaTeX
+Ein LaTeX Konfigurations-Template, mit Beispielen, welches als Grundlage für Zusammenfassungen von Vorlesungen in der Informatik dienen kann.
