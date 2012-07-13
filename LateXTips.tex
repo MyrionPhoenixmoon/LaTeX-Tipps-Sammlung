@@ -1,89 +1,28 @@
-\documentclass[a4paper]{scrreprt} %Uses a KOMA-Script class, just in case it's extended functions will come in handy
-
-%Math
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{enumerate}
-\usepackage{dsfont}
-
-
-%PageStyle
-\usepackage[ngerman]{babel}		 %Loads the New German babel package, for word-wrap
-\usepackage{fontenc}					 %Necessary for later commands, could be used to specify fonts
-\usepackage[latin1]{inputenc}	 %Enables Latin 1 encoding (ISO 8859-1), for easy umlauts
-\usepackage{a4wide}						 %Makes better use of A4 paper than the default	
-\usepackage{fancyhdr, graphicx}%Required for pretty headings and graphics
-\usepackage{wasysym}					 %
-\usepackage{fullpage}					 %
-\usepackage{textcomp} 				 %
-
-%Customized commands
-\newcommand{\BN}{\mathbb{B}} %BOOL
-%Double-Stroke Letters usually denoting a set of numbers
-\newcommand{\RN}{\mathds{R}} %Real Numbers
-\newcommand{\NN}{\mathds{N}} %Natural Numbers
-\newcommand{\QN}{\mathds{Q}} %Rational Numbers
-\newcommand{\ZN}{\mathds{Z}} %Whole Numbers
-\newcommand{\CN}{\mathds{C}} %Complex Numbers
-%Shortcuts for Discrete Maths
-\newcommand{\Teilt}{\mid}				%The 'is divisor of' symbol |
-\newcommand{\Teiltn}{\nmid} 		%The 'is not divisor of' symbol
-%Set theory
-\newcommand{\Potp}{\mathcal{P}} %Power set P (Potenzmenge P)
-\newcommand{\Pota}{\mathcal{A}} %Power set A
-\newcommand{\Potr}{\mathcal{R}} %Power set R
-\newcommand{\Potn}{\mathcal{N}} %Power set N
-%General formatting shortcuts
-\newcommand{\Bold}[1]{\textbf{#1}} 				%Boldface
-\newcommand{\Kursiv}[1]{\textit{#1}}			%Italic
-\newcommand{\T}[1]{\text{#1}} 						%Textmode for use inside mathmode | For example to write a fraction of 1 over some text
-\newcommand{\Nicht}[1]{\T{\sout{$ #1 $}}} %Crosses text out
-%Arrows
-\newcommand{\lra}{\leftrightarrow}			 
-\newcommand{\ra}{\rightarrow}
-\newcommand{\la}{\leftarrow}
-\newcommand{\lral}{\longleftrightarrow}
-\newcommand{\ral}{\longrightarrow}
-\newcommand{\lal}{\longleftarrow}
-\newcommand{\Lra}{\Leftrightarrow}
-\newcommand{\Ra}{\Rightarrow}
-\newcommand{\La}{\Leftarrow}
-\newcommand{\Lral}{\Longleftrightarrow}
-\newcommand{\Ral}{\Longrightarrow}
-\newcommand{\Lal}{\Longleftarrow}
-%Vectors and Matrices
-\newcommand{\Vektor}[1]{\vec{#1}}
-\newcommand{\Brace}[1]{\left( #1 \right)}							 %()
-\newcommand{\Bracel}[1]{\left\lbrace #1 \right.}			 %(
-\newcommand{\Bracer}[1]{\right. #1 \right\rbrace}			 %)
-\newcommand{\Brack}[1]{\left\lbrace #1 \right\rbrace}  %{}
-\newcommand{\Brackl}[1]{\left\lbrace #1 \right.}			 %{
-\newcommand{\Brackr}[1]{\right. #1 \right\rbrace}			 %}
-\newcommand{\Result}[1]{\underline{\underline{#1}}}		 %Doubly underscored
-\newcommand{\Abs}[1]{\left| #1 \right|}								 %Absolute Value
-\newcommand{\Norm}[1]{\Abs{\Abs{ #1 }}}								 %Norm ||x||
-\newcommand{\Matrix}[1]{\left(\begin{matrix}{#1}\end{matrix}\right)}				  %Creates a matrix | a & b will be on the same line | // creates a new line
-\newcommand{\CMatrix}[1]{\left\{\begin{matrix}{#1}\end{matrix}\right\}}			  %Same, with curly braces
-\newcommand{\Brackal}[2]{\left\lbrace\begin{array}{#1} #2 \end{array}\right.} %Creates a single large {
-\newcommand{\Brackar}[2]{\left.\begin{array}{#1} #2 \end{array}\right\rbrace} %Creates a single large }
-%Sums
-\newcommand{\Sumone}[2]{\sum_{#1=1}^{#2}} 		%Sum from arg1 = 1 to arg2
-\newcommand{\Sumz}[2]{\sum_{#1=0}^{#2}} 			%Sum from arg1 = 0 to arg2
-\newcommand{\Sum}[2]{\sum_{#1}^{#2}} 					%Sum from arg1 to arg2
-%Divisions
-\newcommand{\Oneover}[1]{\frac{1}{#1}}				%One divided by arg1
-\newcommand{\Oben}[2]{\overset{#1}{#2}}				%Highlights the enumerator (upper part in a division)
-\newcommand{\Unten}[2]{\underset{#1}{#2}} 		%Highlights the divisor		 (lower part in a division)
-%Tables and images	
-\newcommand{\Tablewt}[3]{\begin{table*}[h]\caption{#1} \begin{tabular}{#2}{#3}\end{tabular}\end{table*}} 								  %Table with a title
-\newcommand{\Bildcap}[2]{\begin{figure}[htb]\centering\includegraphics[width=0.2\textwidth]{#1} \caption{#2}\end{figure}} %Image with Caption
-\newcommand{\Bildjpeg}[1]{\includegraphics[width=0.2\textwidth]{#1.jpeg}} %JPEG Image
-\newcommand{\Bildjpg}[1]{\includegraphics[width=0.2\textwidth]{#1.jpg}} 	%JPG Image
+\documentclass[a4paper]{scrreprt} %Uses a KOMA-Script class, which looks much more like European print media (they were made by Europeans not Americans, so duh!)
+%The documentclass specifies what sort of document you are creating and the options specify things like A4 format. This could all be done by hand, but that's WAY too complicated.
+%Use report, because report includes \newpage in front of the table of contents and new chapters
 
 
 
-\begin{document}
+\input{LaTeXPreamble.tex} %This essentially copy&pastes the entire contents of LaTeXPreamble.tex into this file
+
+
+%Metadata
+%This doesn't get imported, because the title will change...
+\title{FHNW-Informatik Zusammenfassungstemplate} 
+\author{Jan Fässler, Fabio Oesch, Fabian Stebler \& Mark Zeman} 																 %Add your name if you contribute!
+\date{2. Semester (FS 2012)} 																																		 %If the file gets updated with info from later semesters / years, add them, so that all the semesters are visible
+\fancyfoot[C]{If you use this documentation for a exam, you should offer a beer to the authors!} %Replace with appropriate beverage or food if beer ain't your thing :)
+
+
+\begin{document} 						%Now you leave the preamble (config) and start the actual content
+
+\maketitle 									%This takes all the metadata (and could take a few more things) and makes a fancy title page from it
+
+\tableofcontents						%This will take all our parts > chapters > sections > subsections > subsubsections and turn them into a nice table of contents
+
+\chapter{Grundlegende Formatierungen} 		%A new chapter always starts on a new page
+	\section{Untertitel}										%Sections don't
+		\subsection{Weitere Verschachtelung}  %This can go on, but the table of contents only goes down to subsection for report and book and subsubsection (starting at section, not chapter) for article
 
 \end{document}

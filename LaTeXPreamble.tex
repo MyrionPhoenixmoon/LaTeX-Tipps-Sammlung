@@ -1,0 +1,155 @@
+%Math
+\usepackage{amsmath} 		%These are the American Mathematical Society packages, absolutely required for anything remotely to do with math
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}	%Makes enumerations available
+\usepackage{dsfont}			%Loads the double-stroke letters used for example in sets of numbers
+
+
+%PageStyle
+\usepackage[ngerman]{babel}		 %Loads the New German babel package, for word-wrap according to the newer rules and things like "chapter" instead becoming "Kapitel"
+\usepackage[T1]{fontenc}			 %Specifies the font encoding, T1 is appropriate (includes things like Swiss quotation marks)
+\usepackage[latin1]{inputenc}	 %Enables Latin 1 encoding (ISO 8859-1), for easy umlauts on UNIX and at least some Windows systems (not yet tested on MacOS)
+\usepackage{a4wide}						 %Makes better use of A4 paper than the default	
+\usepackage{fancyhdr, graphicx}%Required for pretty headings and graphics
+\usepackage{wasysym}					 %
+\usepackage{fullpage}					 %
+\usepackage{textcomp} 				 %
+\usepackage{ellipsis}					 %Improves whitespace around ellipsis (...) for no reduced performance
+\usepackage{lmodern}					 %Loads the Latin Modern fonts, an updated variant of the Computer Modern font family
+\usepackage{hyperref}					 %Inserts bookmarks into the PDFs and turns the table of contents into links
+
+
+%Customized commands
+\newcommand{\BN}{\mathbb{B}} %BOOL
+%Double-Stroke Letters usually denoting a set of numbers
+\newcommand{\RN}{\mathds{R}} %Real Numbers
+\newcommand{\NN}{\mathds{N}} %Natural Numbers
+\newcommand{\QN}{\mathds{Q}} %Rational Numbers
+\newcommand{\ZN}{\mathds{Z}} %Whole Numbers
+\newcommand{\CN}{\mathds{C}} %Complex Numbers
+%Shortcuts for Discrete Maths
+\newcommand{\Teilt}{\mid}				%The 'is divisor of' symbol |
+\newcommand{\Teiltn}{\nmid} 		%The 'is not divisor of' symbol
+%Set theory
+\newcommand{\Potp}{\mathcal{P}} %Power set P (Potenzmenge P)
+\newcommand{\Pota}{\mathcal{A}} %Power set A
+\newcommand{\Potr}{\mathcal{R}} %Power set R
+\newcommand{\Potn}{\mathcal{N}} %Power set N
+%General formatting shortcuts
+\newcommand{\Bold}[1]{\textbf{#1}} 				%Boldface
+\newcommand{\Kursiv}[1]{\textit{#1}}			%Italic
+\newcommand{\T}[1]{\text{#1}} 						%Textmode for use inside mathmode | For example to write a fraction of 1 over some text
+\newcommand{\Nicht}[1]{\T{\sout{$ #1 $}}} %Crosses text out
+%Arrows
+\newcommand{\lra}{\leftrightarrow}			 
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\lral}{\longleftrightarrow}
+\newcommand{\ral}{\longrightarrow}
+\newcommand{\lal}{\longleftarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\Lral}{\Longleftrightarrow}
+\newcommand{\Ral}{\Longrightarrow}
+\newcommand{\Lal}{\Longleftarrow}
+%Vectors and Matrices
+\newcommand{\Vektor}[1]{\vec{#1}}
+\newcommand{\Brace}[1]{\left( #1 \right)}							 %()
+\newcommand{\Bracel}[1]{\left\lbrace #1 \right.}			 %(
+\newcommand{\Bracer}[1]{\right. #1 \right\rbrace}			 %)
+\newcommand{\Brack}[1]{\left\lbrace #1 \right\rbrace}  %{}
+\newcommand{\Brackl}[1]{\left\lbrace #1 \right.}			 %{
+\newcommand{\Brackr}[1]{\right. #1 \right\rbrace}			 %}
+\newcommand{\Result}[1]{\underline{\underline{#1}}}		 %Doubly underscored
+\newcommand{\Abs}[1]{\left| #1 \right|}								 %Absolute Value
+\newcommand{\Norm}[1]{\Abs{\Abs{ #1 }}}								 %Norm ||x||
+\newcommand{\Matrix}[1]{\left(\begin{matrix}{#1}\end{matrix}\right)}				  %Creates a matrix | a & b will be on the same line | // creates a new line
+\newcommand{\CMatrix}[1]{\left\{\begin{matrix}{#1}\end{matrix}\right\}}			  %Same, with curly braces
+\newcommand{\Brackal}[2]{\left\lbrace\begin{array}{#1} #2 \end{array}\right.} %Creates a single large {
+\newcommand{\Brackar}[2]{\left.\begin{array}{#1} #2 \end{array}\right\rbrace} %Creates a single large }
+%Sums
+\newcommand{\Sumone}[2]{\sum_{#1=1}^{#2}} 		%Sum from arg1 = 1 to arg2
+\newcommand{\Sumz}[2]{\sum_{#1=0}^{#2}} 			%Sum from arg1 = 0 to arg2
+\newcommand{\Sum}[2]{\sum_{#1}^{#2}} 					%Sum from arg1 to arg2
+%Divisions
+\newcommand{\Oneover}[1]{\frac{1}{#1}}				%One divided by arg1
+\newcommand{\Oben}[2]{\overset{#1}{#2}}				%Highlights the enumerator (upper part in a division)
+\newcommand{\Unten}[2]{\underset{#1}{#2}} 		%Highlights the divisor		 (lower part in a division)
+%Tables and images	
+\newcommand{\Tablewt}[3]{\begin{table*}[h]\caption{#1} \begin{tabular}{#2}{#3}\end{tabular}\end{table*}} 								  %Table with a title
+\newcommand{\Bildcap}[2]{\begin{figure}[htb]\centering\includegraphics[width=0.2\textwidth]{#1} \caption{#2}\end{figure}} %Image with Caption
+\newcommand{\Bildjpeg}[1]{\includegraphics[width=0.2\textwidth]{#1.jpeg}} %JPEG Image
+\newcommand{\Bildjpg}[1]{\includegraphics[width=0.2\textwidth]{#1.jpg}} 	%JPG Image
+
+
+%Drawing
+\usepackage{tikz}
+\usepackage[all]{xy}
+\usepackage{ucs}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage{color}
+\usepackage{xcolor}
+
+%Displaying program code
+\usepackage{listings}
+
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+ 
+\lstdefinestyle{MyAntStyle}{  %\lstset{ %
+  language=Octave,                	% the language of the code
+  basicstyle=\footnotesize,         % the size of the fonts that are used for the code
+  numbers=left,                   	% where to put the line-numbers
+  numberstyle=\tiny\color{black},   % the style that is used for the line-numbers
+  stepnumber=1,                   	% the step between two line-numbers. If it's 1, each line 
+                                  	% will be numbered
+  numbersep=3pt,                  	% how far the line-numbers are from the code
+  frame=b,         
+  backgroundcolor=\color{white},    % choose the background color. You must add \usepackage{color}
+  showspaces=false,               	% show spaces adding particular underscores
+  showstringspaces=false,         	% underline spaces within strings
+  showtabs=false,                 	% show tabs within strings adding particular underscores
+  tabsize=2,                      	% sets default tabsize to 2 spaces
+  breaklines=true,                	% sets automatic line breaking
+  breakatwhitespace=false,        	% sets if automatic breaks should only happen at whitespace
+  keywordstyle=\color{blue},        % keyword style
+  commentstyle=\color{black},       % comment style
+  stringstyle=\color{mauve},        % string literal style
+  xleftmargin=17pt,		
+  framexleftmargin=17pt,
+  framexrightmargin=5pt,
+  framexbottommargin=4pt,
+  morekeywords={int,long,float,public,static,class}               % if you want to add more keywords to the set
+}
+
+
+\lstdefinestyle{MyJavaStyle}{ %\lstset{
+ language=Java,
+ basicstyle=\footnotesize\ttfamily, % Standardschrift
+ numbers=left,               				% Ort der Zeilennummern
+ numberstyle=\tiny,         				% Stil der Zeilennummern
+ %stepnumber=2,               			% Abstand zwischen den Zeilennummern
+ numbersep=5pt,              				% Abstand der Nummern zum Text
+ tabsize=2,                  				% Groesse von Tabs
+ extendedchars=true,         				%
+ breaklines=true,            				% Zeilen werden Umgebrochen
+% keywordstyle=\color{red},
+ frame=b,         
+ stringstyle=\color{white}\ttfamily, % Farbe der String
+ showspaces=false,           				% Leerzeichen anzeigen ?
+ showtabs=false,             				% Tabs anzeigen ?
+ xleftmargin=17pt,
+ framexleftmargin=17pt,
+ framexrightmargin=5pt,
+ framexbottommargin=4pt,
+ showstringspaces=false     				% Leerzeichen in Strings anzeigen ?        
+}
